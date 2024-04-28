@@ -1,0 +1,45 @@
+{
+	"node_factories": {
+		"name": {
+			"id_field": "name",
+			"label_field": "name",
+			"type": {
+				"type": "field",
+				"value": "entity_type"
+			},
+			"attr": ["index_type", "index_value"],
+			"tidy": "name"
+		}, 
+        "street": {
+            "id_field": "street", 
+            "label_field": "street", 
+            "type": {
+                "type": "static", 
+                "value": "address"
+            }, 
+            "attr": [],
+            "tidy": "address" 
+            
+        }
+	},
+	"link_factories": [
+		{
+			"source_field": "name",
+			"target_field": "street",
+			"type": {
+				"type": "static",
+				"value": "address"
+			},
+			"attr": ["index_type", "index_value"]
+		},
+		{
+			"source_field": "name",
+			"target_field": "link_to",
+			"type": {
+				"type": "field",
+				"value": "link_type"
+			},
+			"attr": [ "details" ]
+		}
+	]
+}
